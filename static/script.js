@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const chatContainer = document.getElementById("chat-container");
+    const chatBox = document.getElementById("chat-box");
     const userInput = document.getElementById("user-input");
     const sendButton = document.getElementById("send-button");
 
     function appendMessage(sender, message) {
         const messageDiv = document.createElement("div");
-        messageDiv.classList.add("message", sender);
+        messageDiv.classList.add("message", sender + "-message");
         messageDiv.innerText = message;
-        chatContainer.appendChild(messageDiv);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+        chatBox.appendChild(messageDiv);
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
     }
 
     function sendMessage() {
         const message = userInput.value.trim();
         if (message === "") return;
 
-        appendMessage("user", message);
+        appendMessage("user", "You: " + message);
         userInput.value = "";
         
         fetch("/chat", {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-            appendMessage("bot", data.response);
+            appendMessage("bot", "Bot: " + data.response);
         })
         .catch(error => {
             console.error("Error:", error);
