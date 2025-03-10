@@ -28,7 +28,7 @@ This is an AI-powered chatbot that helps users identify diseases based on sympto
     │   ├── script.js        # JavaScript file for frontend interactions
     │── /templates
     │   ├── index.html       # Main chatbot interface
-    │── /models
+    │── /model
     │   ├── trained_disease_model.pkl  # Trained machine learning model
     │   ├── disease_label_encoder.pkl  # Label encoder for disease names
     │── app.py               # Flask backend
