@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 # Define correct paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the directory of app.py
-MODEL_PATH = os.path.join(BASE_DIR, "../models/trained_disease_model.pkl")
-ENCODER_PATH = os.path.join(BASE_DIR, "../models/disease_label_encoder.pkl")
-DATA_PATH = os.path.join(BASE_DIR, "../models/dataset.csv")
-DESC_PATH = os.path.join(BASE_DIR, "../models/description.csv")
-PRECAUTION_PATH = os.path.join(BASE_DIR, "../models/precaution.csv")
+MODEL_PATH = os.path.join(BASE_DIR, "../model/trained_disease_model.pkl")
+ENCODER_PATH = os.path.join(BASE_DIR, "../model/disease_label_encoder.pkl")
+DATA_PATH = os.path.join(BASE_DIR, "../model/dataset.csv")
+DESC_PATH = os.path.join(BASE_DIR, "../model/description.csv")
+PRECAUTION_PATH = os.path.join(BASE_DIR, "../model/precaution.csv")
 
 # Load trained model and label encoder
 model = pickle.load(open(MODEL_PATH, "rb"))
